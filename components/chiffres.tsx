@@ -6,7 +6,11 @@ import { useInView } from "react-intersection-observer";
 import BlurredShapeGray from "@/public/images/blurred-shape-gray.svg";
 import BlurredShape from "@/public/images/blurred-shape.svg";
 
-const AnimatedCounter = ({ value, label }) => {
+type AnimatedCounterProps ={
+  value: number;
+  label: string;
+}
+const AnimatedCounter = ({ value, label } : AnimatedCounterProps) => {
   const [ref, inView] = useInView({
     triggerOnce: false, // Permet de retrigger l'animation à chaque fois que l'élément est visible
     threshold: 0.5,
