@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { motion } from "framer-motion";
 import { FaLinkedin, FaTwitter, FaGithub, FaInstagram } from "react-icons/fa";
 
 export default function TeamSection() {
@@ -38,7 +39,7 @@ export default function TeamSection() {
   ];
 
   return (
-    <section 
+    <section id='cta'
       className="relative py-16 md:py-24 overflow-hidden"
       style={{
         background: 'linear-gradient(135deg, #1f2937 0%, #111827 50%, #831843 100%)',
@@ -65,9 +66,21 @@ export default function TeamSection() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section header */}
         <div className="mx-auto max-w-3xl text-center mb-16">
-          <h2 className="text-4xl font-bold text-white sm:text-5xl mb-4">
-            Notre Équipe Exceptionnelle
-          </h2>
+          <div className="mx-auto max-w-3xl pb-4 text-center md:pb-12">
+            <motion.h2 
+              className="text-4xl font-semibold md:text-5xl relative inline-block"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+            >
+              {/* <span className=" bg-clip-text bg-gradient-to-r from-blue-300 to-blue-500 neon-text-blue-title"> */}
+              <span  className="animate-[gradient_6s_linear_infinite] bg-[linear-gradient(to_right,var(--color-red-200),var(--color-indigo-200),var(--color-red-50),var(--color-indigo-300),var(--color-red-200))] bg-[length:200%_auto] bg-clip-text pb-4 font-nacelle text-3xl font-semibold text-transparent md:text-4xl">
+              Notre Équipe Exceptionnelle
+              </span>
+              <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-blue-400 to-transparent"></span>
+            </motion.h2>
+          </div>
           <p className="text-xl" style={{ color: 'rgba(219, 234, 254, 0.8)' }}>
             Des experts dévoués qui repoussent les limites de l'innovation
           </p>
