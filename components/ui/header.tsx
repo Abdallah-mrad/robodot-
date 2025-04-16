@@ -3,20 +3,12 @@
 import { useEffect, useRef, useState } from 'react';
 import Logo from "./logo";
 import Link from 'next/link';
-import dynamic from 'next/dynamic';
 
 
-// Dynamically import canvas component with SSR disabled
-const ClientParticleCanvas = dynamic(
-  () => import('../ParticleCanvas'),
-  { ssr: false }
-);
 export default function TechHeader() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [displayText, setDisplayText] = useState(true);
-  const [isMounted, setIsMounted] = useState(false);
-
   const [slideDirection, setSlideDirection] = useState<'up'|'down'>('up');
 
   const slides = [
@@ -188,18 +180,12 @@ export default function TechHeader() {
   const nextIndex = (currentIndex + 1) % slides.length;
   const nextSlide = slides[nextIndex];
 
-  useEffect(() => {
-    setIsMounted(true); 
-  }, []);
-
   return (
     <header id='header' className="relative h-screen w-full overflow-hidden">
-      {isMounted && (
-        <ClientParticleCanvas
-          currentIndex={currentIndex}
-          slides={slides}
-        />
-      )}
+      <canvas 
+        ref={canvasRef} 
+        className="absolute inset-0 w-full h-full"
+      />
       
       <div className={`absolute inset-0 bg-gradient-to-br ${currentSlide.bgGradient} transition-all duration-1000 opacity-70`}></div>
       
