@@ -9,7 +9,7 @@ import BlurredShape from "@/public/images/blurred-shape.svg";
 import { motion } from "framer-motion";
 import FeaturesImage from "@/public/images/robodot.gif";
 
-// gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Features() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -17,6 +17,66 @@ export default function Features() {
   const sectionRefs = useRef<(HTMLDivElement | null)[]>([]);
   const featureItemsRef = useRef<(HTMLElement | null)[]>([]);
 
+
+  useEffect(() => {
+    const setupAnimation = () => {
+      if (!videoRef.current || !videoContainerRef.current) return;
+
+      const mm = gsap.matchMedia();
+      
+      mm.add("(min-width: 768px)", () => {
+       
+
+        // Animation des sections au scroll
+        sectionRefs.current.forEach((section, i) => {
+          if (!section) return;
+          
+          gsap.fromTo(section, 
+            { y: 50, opacity: 0 },
+            {
+              y: 0,
+              opacity: 1,
+              duration: 0.8,
+              ease: "power2.out",
+              scrollTrigger: {
+                trigger: section,
+                start: "top 80%",
+                end: "top 50%",
+                scrub: 1,
+                toggleActions: "play none none none",
+              }
+            }
+          );
+        });
+
+        // Animation des éléments de features au scroll
+        featureItemsRef.current.forEach((item, i) => {
+          if (!item) return;
+          
+          gsap.fromTo(item,
+            { y: 30, opacity: 0 },
+            {
+              y: 0,
+              opacity: 1,
+              duration: 0.6,
+              ease: "back.out",
+              scrollTrigger: {
+                trigger: item,
+                start: "top 90%",
+                end: "top 60%",
+                scrub: 1,
+              }
+            }
+          );
+        });
+      });
+
+      return () => mm.revert();
+    };
+
+    const ctx = gsap.context(setupAnimation);
+    return () => ctx.revert();
+  }, []);
 
   const addToFeatureItemsRef = (el: HTMLElement | null, index: number) => {
     featureItemsRef.current[index] = el;
@@ -54,7 +114,7 @@ export default function Features() {
 
           {/* Text + GIF section */}
           <div 
-            ref={el => {sectionRefs.current[0] = el}}
+            ref={(el: any)  => sectionRefs.current[0] = el}
             className="flex items-center justify-between pb-4 md:pb-12"
           >
             <div className="flex-2 pr-4">
@@ -69,8 +129,8 @@ export default function Features() {
 
           {/* Features grid */}
           <div 
-            ref={el => {sectionRefs.current[1] = el}}
-            className="mx-auto grid max-w-sm gap-12 sm:max-w-none sm:grid-cols-2 md:gap-x-14 md:gap-y-16 lg:grid-cols-3"
+           ref={(el: any) => (sectionRefs.current[1] = el)}           
+           className="mx-auto grid max-w-sm gap-12 sm:max-w-none sm:grid-cols-2 md:gap-x-14 md:gap-y-16 lg:grid-cols-3"
           >
             {[
               {
@@ -151,6 +211,7 @@ export default function Features() {
               </article>
             ))}
           </div>
+       
         </div>
       </div>
 
