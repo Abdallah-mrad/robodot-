@@ -105,7 +105,7 @@ export default function Features() {
                 viewport={{ once: false }}
               >
                 <span className="animate-[gradient_6s_linear_infinite] bg-[linear-gradient(to_right,var(--color-red-200),var(--color-indigo-200),var(--color-red-50),var(--color-indigo-300),var(--color-red-200))] bg-[length:200%_auto] bg-clip-text pb-4 font-nacelle text-3xl font-semibold text-transparent md:text-4xl">
-                  Plus rapide.. Plus simple.. Plus intelligent
+                  Plus rapide.. Plus simple..
                 </span>
                 <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-blue-400 to-transparent"></span>
               </motion.h2>
