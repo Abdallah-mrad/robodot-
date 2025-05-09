@@ -92,7 +92,7 @@ export default function Workflows() {
               </motion.h2>
             </div>
             <motion.p 
-              className="text-lg text-indigo-200/65"
+              className="text-lg text-indigo-20/65"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ delay: 0.2, duration: 0.5 }}
@@ -138,7 +138,7 @@ export default function Workflows() {
                       </span>
                     </span>
                   </div>
-                  <p className="text-indigo-100">
+                  <p className="text-indigo-10">
                     Conçu pour les industries des semi-conducteurs et pharmaceutiques, ce robot mobile révolutionne les processus grâce à son intelligence artificielle avancée et sa technologie de reconnaissance d'image.
                   </p>
                 </div>
@@ -169,7 +169,7 @@ export default function Workflows() {
                       </span>
                     </span>
                   </div>
-                  <p className="text-indigo-100">
+                  <p className="text-indigo-10">
                     Il détecte et classe automatiquement les composants, garantissant un suivi rigoureux et une gestion optimisée des packages. En cas d'anomalie, il envoie instantanément une alerte, assurant une réactivité maximale.
                   </p>
                 </div>
@@ -200,7 +200,7 @@ export default function Workflows() {
                       </span>
                     </span>
                   </div>
-                  <p className="text-indigo-100">
+                  <p className="text-white-1000">
                     En automatisant les tâches de contrôle, il réduit les interventions humaines, limite les erreurs et améliore la productivité, tout en garantissant une conformité stricte aux normes de qualité et de sécurité.
                   </p>
                 </div>

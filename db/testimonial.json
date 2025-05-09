@@ -1,0 +1,29 @@
+{
+    "testimonial": [
+      {
+        "name": "L. Karim",
+        "location": "Lead QA Engineer",
+        "img": "femme.jpg",
+        "message": "Ce qui m’a bluffé, c’est l’autonomie. On le déploie, il détecte tout seul et démarre les tests. Aucun besoin d’intervention humaine."
+      },
+      {
+        "name": "M. Moncef",
+        "location": "Directeur Technique",
+        "img": "tourist.jpg",
+        "message": "Grâce au modèle de location flexible, on a pu tester RoboDot sur un projet pilote. Résultat : adoption sur l’ensemble de notre parc mobile dès le trimestre suivant."
+      },
+      {
+        "name": "R. Sonia",
+        "location": "IT Manager",
+        "img": "tourist.jpg",
+        "message": "Le robot s’intègre parfaitement à nos outils existants. Il communique avec notre banc de test sans friction, ce qui était essentiel pour nous."
+      },
+      {
+        "name": "R. Brahim",
+        "location": "Chef de projet",
+        "img": "tourist.jpg",
+        "message": "Le support client est au rendez-vous. Chaque fois qu’on a eu une question, l’équipe RoboDot a répondu rapidement avec des solutions concrètes."
+      }
+    ]
+  }
+  

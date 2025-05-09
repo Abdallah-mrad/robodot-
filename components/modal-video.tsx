@@ -50,13 +50,13 @@ export default function ModalVideo({
         onClick={() => {
           setModalOpen(true);
         }}
-        aria-label="Watch the video"
+        aria-label="Regarder la video"
         data-aos="fade-up"
         data-aos-delay={200}
       >
         <figure className="relative overflow-hidden rounded-2xl before:absolute before:inset-0 before:-z-10 before:bg-linear-to-br before:from-gray-900 before:via-indigo-500/20 before:to-gray-900">
           <Image
-            className="opacity-50 grayscale"
+            className="opacity-20 grayscale"
             src={thumb}
             width={thumbWidth}
             height={thumbHeight}
@@ -94,9 +94,9 @@ export default function ModalVideo({
               </defs>
             </svg>
             <span className="text-sm font-medium leading-tight text-gray-300">
-              Watch Demo
+              Regarder un Demo
               <span className="text-gray-600"> - </span>
-              3:47
+              1:16
             </span>
           </span>
         </span>
@@ -126,7 +126,7 @@ export default function ModalVideo({
                 controls
               >
                 <source src={video} type="video/mp4" />
-                Your browser does not support the video tag.
+                Votre navigateur ne prend pas en charge la vidéo.
               </video>
             </DialogPanel>
           </div>
